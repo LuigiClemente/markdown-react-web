@@ -49,9 +49,9 @@ export default function Projects() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const mdData:Array<any> = await useMD('/src/markdowns/project1.md',1);
-      const mdData2:Array<any>= await useMD('/src/markdowns/project2.md',2);
-      const mdData3 :Array<any>= await useMD('/src/markdowns/project3.md',3);
+      const mdData:Array<any> = await useMD('/src/markdowns/projects/project1.md',1);
+      const mdData2:Array<any>= await useMD('/src/markdowns/projects/project2.md',2);
+      const mdData3 :Array<any>= await useMD('/src/markdowns/projects/project3.md',3);
 
       const data = [mdData[0] ,mdData2[0] , mdData3[0]]
     const timer = setTimeout(() => {
