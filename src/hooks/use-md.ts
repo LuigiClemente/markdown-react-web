@@ -3,7 +3,7 @@ import ProjectModel from "../models/ProjectModel";
 
 function getVal(str: string): string  {
     const parts = str?.split(":**");
-    if (parts.length > 1) {
+    if (parts?.length > 1) {
         const value = parts[1].trim();
         return value;
     } else {
@@ -13,9 +13,9 @@ function getVal(str: string): string  {
 
 function extractInfo(str: string): { username: string, fullName: string, email: string } | null {
     const regex = /\[([^[]+)\]\(([^()]+)\)\s*\(([^()]+)\)/;
-    const match = str.match(regex);
-    if (match && match.length === 4) {
-        const fullName = match[1].trim();
+    const match = str?.match(regex);
+    if (match && match?.length === 4) {
+        const fullName = match[1]?.trim();
         const username = match[2]?.split('/').pop()?.trim() || '';
         const email = match[3].trim();
         return { username, fullName, email };
@@ -26,7 +26,7 @@ function extractInfo(str: string): { username: string, fullName: string, email: 
 
 function cleanString(str: string): string | undefined {
     if (typeof str !== 'string') return undefined;
-    const cleanedString = str.replace(/# /g, '').replace(/\r/g, '');
+    const cleanedString = str?.replace(/# /g, '').replace(/\r/g, '');
 
     return cleanedString;
 }
@@ -47,7 +47,7 @@ function extractLabels(str:string) {
     const result = [];
     let id = 1;
     
-    while ((match = regex.exec(str)) !== null) {
+    while ((match = regex?.exec(str)) !== null) {
         const color = match[1];
         const name = match[2];
         result.push({id, name, color});
@@ -64,7 +64,7 @@ async function useMD(fileUrl: string,index:number,type?:string): Promise<Array<a
         const markdownContent = await response.text();
         const repositories = markdownContent?.split('---');
         if(type === "posts"){
-            const posts: any = repositories.map((repo,index) =>{
+            const posts: any = repositories?.map((repo,index) =>{
                 const lines = repo.trim().split('\n');
                 const post: any = {};
                 post.id = index
@@ -86,7 +86,7 @@ async function useMD(fileUrl: string,index:number,type?:string): Promise<Array<a
             return posts;
         }
         else{
-            const projects: ProjectModel[] = repositories.map((repo) => {
+            const projects: ProjectModel[] = repositories?.map((repo) => {
                 const lines = repo.trim().split('\n');
                 const project: any = {};
                 project.id = index;
