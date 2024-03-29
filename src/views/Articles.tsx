@@ -2,29 +2,23 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import tw from 'twin.macro';
-
 import ArticleItem from '../components/ArticleItem';
 import ArticleSkeleton from '../components/ArticleSkeleton';
-import Pagination from '../components/Pagination';
 import Skeleton from '../components/Skeleton';
-import useHandling from '../hooks/use-handling';
 import useQuery from '../hooks/use-query';
 import ArticleModel from '../models/ArticleModel';
 import CategoryModel from '../models/CategoryModel';
-import github from '../services/github';
 import { createQueryURL } from '../utils';
-import articlesDummy from './articles.json'
 import classes from '../styles/Article.module.css'
 import useMD from '../hooks/use-md';
+import { MARKDOWN_BASE_FOLDER, MARKDOWN_POST_FILE } from '../markdownConfig';
 
 const Wrapper = tw.main`mx-auto w-full max-w-screen-lg px-8 py-12 mt-6`;
 
 const Title = tw.h2`text-2xl text-slate-600`;
-
 const List = tw.div`mt-8 overflow-y-auto `; 
 
 const Foot = tw.div`mt-8 flex justify-center`;
-
 export type ArticlesProps = {
   milestone: number;
 };
@@ -55,7 +49,7 @@ export default function Articles(props: ArticlesProps) {
     const fetchData = async () => {
       loadArticles(true);
 
-      const mdData: Array<any> = await useMD('/src/markdowns/posts.md', 1, "posts");
+      const mdData: Array<any> = await useMD(`${MARKDOWN_BASE_FOLDER + MARKDOWN_POST_FILE}`, 1, "posts");
 
       const timer = setTimeout(() => {
         loadArticles(false);
@@ -68,34 +62,6 @@ export default function Articles(props: ArticlesProps) {
 
     fetchData();
   }, []);
-
-
-  // const [loadingArticles, loadArticles] = useHandling(
-  //   useCallback(async () => {
-  //     if (category?.number !== props.milestone) {
-  //       const milestones = await github.listMilestones();
-  //       const milestone = milestones.find((m) => m.number === props.milestone);
-
-  //       if (!milestone) {
-  //         navigate('/404');
-  //         return;
-  //       }
-
-  //       setCategory(CategoryModel.from(milestone));
-  //     }
-
-  //     const list = await github.listIssues({
-  //       milestone: props.milestone,
-  //       ...query,
-  //     });
-
-  //     setArticles(list.map(ArticleModel.from));
-  //   }, [props.milestone, query]),
-  // );
-
-  // useEffect(() => {
-  //   loadArticles();
-  // }, [props.milestone, query]);
 
   const title = useMemo(() => {
     return category ? t(`tab.${category.title.toLowerCase()}` as any) : '';
@@ -118,7 +84,6 @@ export default function Articles(props: ArticlesProps) {
   return (
     <Wrapper>
       <Skeleton tw="h-8 w-24">
-        {/* <Title>{title}</Title> */}
         <Title>Posts</Title>
       </Skeleton>
 
@@ -134,14 +99,6 @@ export default function Articles(props: ArticlesProps) {
             />
           ))}
       </List>
-      {/* <Foot>
-        <Pagination
-          page={query.page}
-          pageSize={query.pageSize}
-          total={total}
-          onChange={onPageChange}
-        />
-      </Foot> */}
     </Wrapper>
   );
 }
