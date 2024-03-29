@@ -76,8 +76,8 @@ export default function ProjectItem(props: ProjectItemProps) {
       <Icon style={{ color: icon.color }}>
         <icon.component />
       </Icon>
-      {/* <Title href={project.htmlUrl}>{project.fullName}</Title> */}
-      <Title>{t(project.fullName)}</Title>
+      <Title href={project.htmlUrl}>{project.fullName}</Title>
+      {/* <Title>{t(project.fullName)}</Title> */}
       <Description>{t(project.description)}</Description>
       <CountList>
         <CountItem>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import tw from 'twin.macro';
 import ProjectItem from '../components/ProjectItem';
@@ -17,14 +17,12 @@ export default function Projects() {
 
   const [projects, setProjects] = useState<ProjectModel[]>([]);
   const [loadingProjects, setLoadingProjects] = useState(true);
-  console.log('pr-MARKDOWN_BASE_FOLDER',MARKDOWN_BASE_FOLDER)
-console.log('pr-MARKDOWN_PROJECT_FOLDER',MARKDOWN_PROJECT_FOLDER)
-console.log('pr-MARKDOWN_PROJECT_FILES',MARKDOWN_PROJECT_FILES)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const projectsResponse: ProjectModel[] = [];
-        MARKDOWN_PROJECT_FILES.forEach(async (filePath, fileIndex) => {
+        console.log(MARKDOWN_BASE_FOLDER + MARKDOWN_PROJECT_FOLDER)
+        MARKDOWN_PROJECT_FILES.forEach(async (filePath:any, fileIndex:any) => {
           const data = await useMD(`${MARKDOWN_BASE_FOLDER + MARKDOWN_PROJECT_FOLDER + '/' + filePath}`, fileIndex + 1);
           projectsResponse.push(data[0]);
         })
@@ -57,7 +55,7 @@ return (
 
     {!!projects.length && (
       <List>
-        {projects.map((project) => (
+        {projects.map((project:any) => (
           <ProjectItem key={project.id} project={project} />
         ))}
       </List>
