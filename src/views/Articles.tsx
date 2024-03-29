@@ -44,12 +44,12 @@ export default function Articles(props: ArticlesProps) {
   const [category, setCategory] = useState<CategoryModel>();
   const [articles, setArticles] = useState<ArticleModel[]>([]);
   const total = category?.articles ?? 0;
-
+  console.log('po-MARKDOWN_BASE_FOLDER',MARKDOWN_BASE_FOLDER)
   useEffect(() => {
     const fetchData = async () => {
       loadArticles(true);
 
-      const mdData: Array<any> = await useMD(`${MARKDOWN_BASE_FOLDER + MARKDOWN_POST_FILE}`, 1, "posts");
+      const mdData: Array<any> = await useMD(`/src/markdowns/posts.md`, 1, "posts");
 
       const timer = setTimeout(() => {
         loadArticles(false);

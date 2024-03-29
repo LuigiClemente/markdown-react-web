@@ -17,7 +17,9 @@ export default function Projects() {
 
   const [projects, setProjects] = useState<ProjectModel[]>([]);
   const [loadingProjects, setLoadingProjects] = useState(true);
-  
+  console.log('pr-MARKDOWN_BASE_FOLDER',MARKDOWN_BASE_FOLDER)
+console.log('pr-MARKDOWN_PROJECT_FOLDER',MARKDOWN_PROJECT_FOLDER)
+console.log('pr-MARKDOWN_PROJECT_FILES',MARKDOWN_PROJECT_FILES)
   useEffect(() => {
     const fetchData = async () => {
       try {
