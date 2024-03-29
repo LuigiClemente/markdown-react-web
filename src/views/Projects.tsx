@@ -17,11 +17,11 @@ export default function Projects() {
 
   const [projects, setProjects] = useState<ProjectModel[]>([]);
   const [loadingProjects, setLoadingProjects] = useState(true);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
         const projectsResponse: ProjectModel[] = [];
-        console.log(MARKDOWN_BASE_FOLDER + MARKDOWN_PROJECT_FOLDER)
         MARKDOWN_PROJECT_FILES.forEach(async (filePath, fileIndex) => {
           const data = await useMD(`${MARKDOWN_BASE_FOLDER + MARKDOWN_PROJECT_FOLDER + '/' + filePath}`, fileIndex + 1);
           projectsResponse.push(data[0]);
