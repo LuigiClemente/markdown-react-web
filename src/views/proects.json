@@ -1,0 +1,68 @@
+[
+    {
+        "id": 0,
+        "owner": {
+            "id": 123,
+            "username": "john_doe",
+            "fullName": "John Doe",
+            "email": "john@example.com"
+        },
+        "fullName": "Example Repository 1",
+        "name": "example-repo-1",
+        "htmlUrl": "https://github.com/example/example-repo-1",
+        "description": "This is an example repository.",
+        "language": "JavaScript",
+        "forksCount": 10,
+        "stargazersCount": 50,
+        "openIssuesCount": 2,
+        "archived": false,
+        "disabled": false,
+        "pushedAt": "2024-03-27T12:00:00Z",
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-03-27T15:30:00Z"
+    },
+    {
+        "id": 1,
+        "owner": {
+            "id": 123,
+            "username": "AteebNoOne",
+            "fullName": "Ateeb NoOne",
+            "email": "ateeb@example.com"
+        },
+        "fullName": "React Portfolio Website",
+        "name": "react-portfolio",
+        "htmlUrl": "https://github.com/AteebNoOne/react-portfolio",
+        "description": "This project is a personal portfolio website built using React.js. It showcases the owner's skills, projects, and experiences in an interactive and visually appealing manner.",
+        "language": "HTML",
+        "forksCount": 0,
+        "stargazersCount": 0,
+        "openIssuesCount": 0,
+        "archived": false,
+        "disabled": false,
+        "pushedAt": "2024-03-28T12:00:00Z",
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-03-28T12:00:00Z"
+    },
+    {
+        "id": 2,
+        "owner": {
+            "id": 123,
+            "username": "AteebNoOne",
+            "fullName": "Ateeb NoOne",
+            "email": "ateeb@example.com"
+        },
+        "fullName": "Java Spring Boot Blog API",
+        "name": "spring-boot-blog-api",
+        "htmlUrl": "https://github.com/AteebNoOne/spring-boot-blog-api",
+        "description": "This project is a backend API for a simple blog system built using Java Spring Boot framework. It provides endpoints for creating, reading, updating, and deleting blog posts.",
+        "language": "TypeScript",
+        "forksCount": 0,
+        "stargazersCount": 0,
+        "openIssuesCount": 0,
+        "archived": false,
+        "disabled": false,
+        "pushedAt": "2024-03-28T12:00:00Z",
+        "createdAt": "2024-01-01T10:00:00Z",
+        "updatedAt": "2024-03-28T12:00:00Z"
+    }
+]
