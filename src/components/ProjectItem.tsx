@@ -12,6 +12,7 @@ import IconTs from '~icons/teenyicons/typescript-outline';
 import IconCS from '~icons/vscode-icons/file-type-csharp';
 
 import ProjectModel from '../models/ProjectModel';
+import { useTranslation } from 'react-i18next';
 
 const Wrapper = tw.div`
   relative p-3 pl-14
@@ -66,6 +67,7 @@ export type ProjectItemProps = {
 
 export default function ProjectItem(props: ProjectItemProps) {
   const { project } = props;
+  const { t } = useTranslation();
 
   const icon = iconMap[props.project.language] ?? iconMap.default;
 
@@ -75,8 +77,8 @@ export default function ProjectItem(props: ProjectItemProps) {
         <icon.component />
       </Icon>
       {/* <Title href={project.htmlUrl}>{project.fullName}</Title> */}
-      <Title>{project.fullName}</Title>
-      <Description>{project.description}</Description>
+      <Title>{t(project.fullName)}</Title>
+      <Description>{t(project.description)}</Description>
       <CountList>
         <CountItem>
           <IconStar />

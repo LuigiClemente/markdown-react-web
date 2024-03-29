@@ -84,7 +84,7 @@ export default function Articles(props: ArticlesProps) {
   return (
     <Wrapper>
       <Skeleton tw="h-8 w-24">
-        <Title>Posts</Title>
+        <Title>{t('tab.posts')}</Title>
       </Skeleton>
 
       <List className={classes.List}>

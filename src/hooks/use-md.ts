@@ -2,7 +2,7 @@ import ArticleModel from "../models/ArticleModel";
 import ProjectModel from "../models/ProjectModel";
 
 function getVal(str: string): string  {
-    const parts = str.split(":**");
+    const parts = str?.split(":**");
     if (parts.length > 1) {
         const value = parts[1].trim();
         return value;
@@ -16,7 +16,7 @@ function extractInfo(str: string): { username: string, fullName: string, email: 
     const match = str.match(regex);
     if (match && match.length === 4) {
         const fullName = match[1].trim();
-        const username = match[2].split('/').pop()?.trim() || '';
+        const username = match[2]?.split('/').pop()?.trim() || '';
         const email = match[3].trim();
         return { username, fullName, email };
     } else {
@@ -62,7 +62,7 @@ async function useMD(fileUrl: string,index:number,type?:string): Promise<Array<a
     try {
         const response = await fetch(fileUrl);
         const markdownContent = await response.text();
-        const repositories = markdownContent.split('---');
+        const repositories = markdownContent?.split('---');
         if(type === "posts"){
             const posts: any = repositories.map((repo,index) =>{
                 const lines = repo.trim().split('\n');
