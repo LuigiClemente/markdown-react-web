@@ -59,10 +59,16 @@ function extractLabels(str:string) {
 
 
 async function useMD(fileUrl: string,index:number,type?:string): Promise<Array<any>> {
+    console.log('fileUrl',fileUrl)
+    console.log('index',index)
+    console.log('type',type)
     try {
         const response = await fetch(fileUrl);
+        console.log('response',response)
         const markdownContent = await response.text();
+        console.log('markdownContent',markdownContent)
         const repositories = markdownContent?.split('---');
+        console.log('repositories',repositories)
         if(type === "posts"){
             const posts: any = repositories?.map((repo,index) =>{
                 const lines = repo.trim().split('\n');
