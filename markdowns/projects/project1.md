@@ -8,4 +8,4 @@
 - **Open Issues:** 2
 - **Created At:** 2024-01-01
 - **Last Updated At:** 2024-03-27
-- **GitHub Repository:** [example-repo-1](https://github.com/example/example-repo-1)
+- **GitHub Repository:** [example-repo-1](https://github.com/LuigiClemente/markdown-react-web)

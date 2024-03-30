@@ -1,6 +1,6 @@
-# React Portfolio Website
+# New React Portfolio Website
 
-- **Owner:** [Ateeb NoOne](https://github.com/umergillani36) (umer@example.com)
+- **Owner:** [Umer Gillani](https://github.com/umergillani36) (umer@example.com)
 - **Description:** This project is a personal portfolio website built using React.js. It showcases the owner's skills, projects, and experiences in an interactive and visually appealing manner.
 - **Language:** HTML
 - **Forks:** 0

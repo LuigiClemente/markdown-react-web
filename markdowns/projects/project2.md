@@ -8,4 +8,4 @@
 - **Open Issues:** 0
 - **Created At:** 2024-01-01
 - **Last Updated At:** 2024-03-28
-- **GitHub Repository:** [spring-boot-blog-api](https://github.com/AteebNoOne/spring-boot-blog-api)
+- **GitHub Repository:** [spring-boot-blog-api](https://github.com/LuigiClemente/markdown-react-web)
